@@ -1,0 +1,28 @@
+
+# lapply function takes as arguments a list and a function and applies the function to each element of the list and returns a list
+x <- list(a = 1:5, b = rnorm(10))
+lapply(x, mean)
+
+y <- list(a = 1:4, b = rnorm(10), c = rnorm(20, 1) , d = rnorm(100, 5))
+lapply(y , mean)
+
+z <- 1:4
+lapply(z, runif) # runif function -> Normal Distribution
+
+p <- 1:4
+lapply(p, runif, min = 0, max = 10)
+
+
+# lapply function with anonymous function (anonymous function are functions without name)
+mat <- list(a = matrix(1:4, 2, 2), b = matrix(1:6, 3, 2))
+mat
+
+lapply(mat, function(X) X[ , 1])
+
+# sapply simplifies the result of lapply
+
+t <- list(a = 1:4, b = rnorm(10), c = rnorm(20, 1), d = rnorm(100, 5))
+lapply(t, mean)
+
+sapply(t, mean)
+mean(t) # error
